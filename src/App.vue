@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center select-none">
-    <h1 class="text-4xl mt-12">Hola Euge</h1>
+    <h1 class="text-4xl mt-12">Hola Euge &lt;3</h1>
     <h2 :class="[siClickeado ? 'text-2xl text-warm-pink' : 'text-lg']">{{ msg }}</h2>
     <div>
       <img src="./assets/loop-cute-love-cub.gif" alt="Cute love cub" draggable="false" />
@@ -52,7 +52,10 @@ function moveBtn(e) {
 }
 
 function cambiarMsg() {
-  msg.value = "Nos vemos el viernes 22 a la noche ;)";
+  msg.value = `
+  Jaja, sabía que ibas a decir que sí :D.
+  Nos vemos el viernes 22 a la noche ;)
+  `;
   siClickeado.value = true;
 }
 </script>
