@@ -13,8 +13,8 @@
     <div>
       <button
         id="btnSi"
-        class="border-2 rounded-xl bg-rose-pink border-warm-pink px-6 relative -left-2 z-50 hover:"
-        @click="cambiarMsg"
+        class="border-2 rounded-xl bg-rose-pink border-warm-pink px-6 relative -left-2 z-50"
+        @click="handleClick"
       >
         Sí
       </button>
@@ -56,12 +56,59 @@ function moveBtn(e) {
     ).toString() + "px";
 }
 
-function cambiarMsg() {
+function handleClick() {
   msg.value = `
   Jaja, sabía que ibas a decir que sí :D.
   Nos vemos el viernes 22 a la noche ;)
   `;
   siClickeado.value = true;
+
+  const corazonNuevo = document.createElement("span");
+  // Add random size and offset
+  const sizes = [
+    "text-sm",
+    "text-md",
+    "text-lg",
+    "text-xl",
+    "text-2xl",
+    "text-3xl",
+    "text-4xl",
+    "text-5xl",
+    "text-6xl",
+    "text-7xl",
+    "text-8xl",
+  ];
+  const emojis = [
+    "❤️",
+    "💗",
+    "💖",
+    "💓",
+    "💛",
+    "🫀",
+    "💝",
+    "💘",
+    "💞",
+    "💕",
+    "🥰",
+    "🩷",
+    "😍",
+    "😘",
+  ];
+
+  const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+  const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+  corazonNuevo.appendChild(document.createTextNode(randomEmoji));
+  corazonNuevo.classList.add(randomSize);
+
+  // posicion
+
+  corazonNuevo.style.position = "absolute";
+  corazonNuevo.style.top = `${getRandomInt(0, 100)}%`;
+  corazonNuevo.style.left = `${getRandomInt(0, 100)}%`;
+
+  // Insertar en el documento
+  document.body.appendChild(corazonNuevo);
 }
 </script>
 
